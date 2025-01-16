@@ -47,7 +47,7 @@ const puzzleInput2dArr: number[][] = [
 
     },
 
-    // update/draw 10 times per second (will wait 1/10 of a second until next function call in recursive algorithm)
+    // update/draw 10 times per second (will wait 1/10 of a second until calling next function in recursive algorithm)
     delayBetweenEachStepInCallStackInMillisecs: 1000 / 10, 
   });
 
