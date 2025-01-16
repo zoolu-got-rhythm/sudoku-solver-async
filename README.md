@@ -111,3 +111,6 @@ a 9x9 2d array of numbers where -1 represents an empty cell
 `Promise`\<`number`[][]\>
 
 a 9x9 2d array of numbers representing the solved sudoku puzzle
+
+# projects that use this package
+If you end up writing any apps/visualisations that use this package, or find the package useful in any way would <3 to see or hear about it. Happy Coding :)
