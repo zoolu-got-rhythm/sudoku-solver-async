@@ -41,14 +41,14 @@ const puzzleInput1dArr: number[] = [
 
 (async () => {
   console.log("sudoku puzzle input");
-  const formattedPuzzleInputAsString = puzzleInput2dArrEvil
+  const formattedPuzzleInputAsString = puzzleInput2dArr
     .map((row) => row.map((cell) => (cell === -1 ? " " : cell)).join(" "))
     .join("\n");
   console.log(formattedPuzzleInputAsString);
 
   console.log("\n");
 
-  const solvedSudoku = await solveProperSudokuAsync(puzzleInput2dArrEvil, {
+  const solvedSudoku = await solveProperSudokuAsync(puzzleInput2dArr, {
     onFunctionExecutingInCallStack: (x, y, arr2d) => {
       console.clear();
       console.log(`call stack n: ${y * 9 + x}, x: ${x}, y: ${y}`);

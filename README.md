@@ -1,7 +1,7 @@
 # Sudoku Solver Asynchronous (TypeScript)
 a proper sudoku solver where the input has to be 9x9 and with a minimum of 17 clues, uses a recursive backtracking algorithm. 
 
-![screenshot of solved sudoku puzzle input](./solved-sudoku-puzzle-screenshot.png)
+<img alt="screenshot of solved sudoku puzzle input" src="./realtime-console-visualisation.gif" width="280px"/>
 
 
 # usage
