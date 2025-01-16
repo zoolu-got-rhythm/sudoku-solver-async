@@ -3,7 +3,32 @@ a proper sudoku solver where the input has to be 9x9 and with a minimum of 17 cl
 
 ![screenshot of solved sudoku puzzle input](./solved-sudoku-puzzle-screenshot.png)
 
-# example usage to write a realtime visualisation (in the console) of a suduko puzzle being solved 
+
+# usage
+## basic usage
+``` TypeScript
+// sudoku puzzle input as a 2d array (can also be a 1d array)
+const puzzleInput2dArr: number[][] = [
+  [9, 1, 5, -1, -1, 3, 4, -1, 6],
+  [-1, -1, -1, 1, -1, 2, -1, 8, 9],
+  [-1, 6, -1, -1, -1, 4, 7, -1, 3],
+
+  [-1, -1, -1, 3, 1, -1, -1, 9, -1],
+  [5, -1, 8, -1, 4, -1, -1, 3, 2],
+  [3, 4, 1, 8, -1, -1, -1, 5, -1],
+
+  [-1, -1, -1, 4, 9, 6, -1, -1, -1],
+  [2, 7, -1, -1, -1, -1, 9, -1, -1],
+  [4, -1, 9, -1, -1, 1, 3, -1, 5],
+];
+
+(async () => {  
+  // function api usage
+  const solvedSudoku: number[][] = await solveProperSudokuAsync(puzzleInput2dArr);
+})();
+```
+
+## example usage to write a visualisation (in the console) of a suduko puzzle being solved in realtime
 
 ``` TypeScript
 // sudoku puzzle input as a 2d array (can also be as a 1d array)
