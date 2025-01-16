@@ -5,7 +5,7 @@ a proper sudoku solver where the input has to be 9x9 and with a minimum of 17 cl
 
 # example usage to write a realtime visualisation (in the console) of a suduko puzzle being solved 
 
-``` exampleVisualisation.ts
+``` TypeScript
 // sudoku puzzle input as a 2d array (can also be as a 1d array)
 const puzzleInput2dArr: number[][] = [
   [9, 1, 5, -1, -1, 3, 4, -1, 6],
