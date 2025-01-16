@@ -1,24 +1,63 @@
 # Sudoku Solver Asynchronous (TypeScript)
-a proper sudoku solver where the input has to be 9x9 and with a minimum of 17 clues
-
-the goal of this project was to figure out how to implement a sudoku solver without using any resources (other than a gif of a backtracking algorithm going row by row on wikipedia). the challange of this project was for me to figure out how to implement the solver based of these minimal details, i already arrived at the conclusion a recursive approach of some kind would be needed.
+a proper sudoku solver where the input has to be 9x9 and with a minimum of 17 clues, uses a recursive backtracking algorithm. 
 
 ![screenshot of solved sudoku puzzle input](./solved-sudoku-puzzle-screenshot.png)
 
-# How To Run
-## install dependencies
-```
-npm i
-```
+# example usage to write a realtime visualisation (in the console) of a suduko puzzle being solved 
 
-## how to run example 
-```
-npx tsc && node ./dist/index.js
-```
+``` exampleVisualisation.ts
+// sudoku puzzle input as a 2d array (can also be as a 1d array)
+const puzzleInput2dArr: number[][] = [
+  [9, 1, 5, -1, -1, 3, 4, -1, 6],
+  [-1, -1, -1, 1, -1, 2, -1, 8, 9],
+  [-1, 6, -1, -1, -1, 4, 7, -1, 3],
 
-## how to run tests
-```
-npm run test
+  [-1, -1, -1, 3, 1, -1, -1, 9, -1],
+  [5, -1, 8, -1, 4, -1, -1, 3, 2],
+  [3, 4, 1, 8, -1, -1, -1, 5, -1],
+
+  [-1, -1, -1, 4, 9, 6, -1, -1, -1],
+  [2, 7, -1, -1, -1, -1, 9, -1, -1],
+  [4, -1, 9, -1, -1, 1, 3, -1, 5],
+];
+
+(async () => {
+  console.log("sudoku puzzle input");
+
+  const formattedPuzzleInputAsString = puzzleInput2dArr
+    .map((row) => row.map((cell) => (cell === -1 ? " " : cell)).join(" "))
+    .join("\n");
+  console.log(formattedPuzzleInputAsString);
+
+  console.log("\n");
+  
+  // function api usage
+  const solvedSudoku = await solveProperSudokuAsync(puzzleInput2dArr, {
+    // 'hook' into each function calls information in the recursive call stack
+    onFunctionExecutingInCallStack: (x, y, arr2d) => {
+
+      // visualisation code start
+      console.clear();
+      console.log(`call stack n: ${y * 9 + x}, x: ${x}, y: ${y}`);
+      const formattedResultAsString = arr2d
+        .map((row) => row.map((cell) => (cell === -1 ? " " : cell)).join(" "))
+        .join("\n");
+      console.log(formattedResultAsString);
+      // visualisation code end
+
+    },
+
+    // update/draw 10 times per second (will wait 1/10 of a second until next function call in recursive algorithm)
+    delayBetweenEachStepInCallStackInMillisecs: 1000 / 10, 
+  });
+
+  // print result
+  console.log("solved sudoku puzzle");
+  const formattedResultAsString = solvedSudoku
+    ?.map((row) => row.join(" "))
+    .join("\n");
+  console.log(formattedResultAsString);
+})();
 ```
 
 # API Documentation 
