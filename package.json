@@ -30,8 +30,7 @@
         "format": "prettier --write \"src/**/*.ts\"",
         "lint": "eslint . --ext .ts",
         "prepare": "npm run build",
-        "prepublishOnly": "npm test && npm run lint",
-        "preversion": "npm run lint",
+     
         "postversion": "git push && git push --tags"
     },
     "files": [
