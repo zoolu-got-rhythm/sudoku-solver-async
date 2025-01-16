@@ -33,7 +33,7 @@ const puzzleInput2dArr: number[][] = [
   
   // function api usage
   const solvedSudoku = await solveProperSudokuAsync(puzzleInput2dArr, {
-    // 'hook' into each function calls information in the recursive call stack
+    // 'hook' into each function call in the recursive call stack
     onFunctionExecutingInCallStack: (x, y, arr2d) => {
 
       // visualisation code start
