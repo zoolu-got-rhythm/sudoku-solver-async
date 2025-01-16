@@ -1,5 +1,8 @@
-import { check3by3BoxIsValid, checkColumnIsValid, checkRowIsValid } from "./sudokuSolver";
-
+import {
+  check3by3BoxIsValid,
+  checkColumnIsValid,
+  checkRowIsValid,
+} from "./sudokuSolverAsync";
 
 const puzzleInput2dArrA: number[][] = [
   [9, 1, 5, -1, -1, 3, 4, -1, 6],

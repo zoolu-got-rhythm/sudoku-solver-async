@@ -1,4 +1,4 @@
-import { solveProperSudokuAsync } from "./sudokuSolver";
+import { solveProperSudokuAsync } from "./sudokuSolverAsync";
 
 const puzzleInput2dArr: number[][] = [
   [9, 1, 5, -1, -1, 3, 4, -1, 6],
@@ -48,8 +48,7 @@ const puzzleInput1dArr: number[] = [
 
   console.log("\n");
 
-  const solvedSudoku = await solveProperSudokuAsync(puzzleInput2dArrEvil, 
-    {
+  const solvedSudoku = await solveProperSudokuAsync(puzzleInput2dArrEvil, {
     onFunctionExecutingInCallStack: (x, y, arr2d) => {
       console.clear();
       console.log(`call stack n: ${y * 9 + x}, x: ${x}, y: ${y}`);
@@ -59,8 +58,7 @@ const puzzleInput1dArr: number[] = [
       console.log(formattedResultAsString);
     },
     delayBetweenEachStepInCallStackInMillisecs: 1000 / 20,
-  }
-);
+  });
 
   console.log("solved sudoku puzzle");
   const formattedResultAsString = solvedSudoku
