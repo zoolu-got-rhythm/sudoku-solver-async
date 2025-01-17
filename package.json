@@ -2,7 +2,7 @@
     "name": "sudoku-solver-async",
     "version": "1.0.0",
     "description": "asynchronous proper sudoku solver which allows you to 'hook' into the function call stack data as the sudoku input puzzle is being solved. useful for writing things like realtime visualisations.",
-    "main": "dist/sudokuSolverAsync.ts",
+    "main": "dist/sudokuSolverAsync.js",
     "types": "dist/sudokuSolverAsync.d.ts",
     "author": "christopher.pkm@gmail.com",
     "license": "MIT",
