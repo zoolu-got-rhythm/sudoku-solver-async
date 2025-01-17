@@ -35,6 +35,7 @@
     "files": [
         "dist/sudokuSolverAsync.js",
         "dist/sudokuSolverAsync.js.map",
-        "dist/sudokuSolverAsync.d.ts"
+        "dist/sudokuSolverAsync.d.ts",
+        "dist/sleep.js"
     ]
 }
