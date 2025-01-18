@@ -100,6 +100,7 @@ const numberAtPosXYIsLegal = (xIndex: number, yIndex: number, arr2d: number[][])
 export type CallStackStep = {
     onFunctionExecutingInCallStack: (x: number, y: number, arr2d: number[][]) => void;
     delayBetweenEachStepInCallStackInMillisecs: number;
+    onPuzzleSolutionFound?: () => void;
 };
 
 const solveProperSudokuRecursiveAsync = async (
@@ -118,9 +119,9 @@ const solveProperSudokuRecursiveAsync = async (
 
         // if location is a clue
         if (arr2d[y][x] !== -1) {
+            // end condition
             if (y === 8 && x === 8) {
-                // end condition
-                console.log("end");
+                callStackStep?.onPuzzleSolutionFound && callStackStep.onPuzzleSolutionFound();
 
                 resolve(arr2d);
                 return;
@@ -157,9 +158,10 @@ const solveProperSudokuRecursiveAsync = async (
                 let result: number[][] | undefined = undefined;
 
                 if (numberAtPosXYIsLegal(x, y, arr2dcopy)) {
+                    // end condition
                     if (y === 8 && x === 8) {
-                        // end condition
-                        console.log("end");
+                        callStackStep?.onPuzzleSolutionFound && callStackStep.onPuzzleSolutionFound();
+
                         resolve(arr2dcopy);
                         return;
                     }
