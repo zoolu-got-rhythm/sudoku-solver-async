@@ -1,12 +1,14 @@
 # Sudoku Solver Asynchronous
-a proper sudoku solver where the input has to be 9x9 and with a minimum of 17 clues, uses a brute force recursive backtracking algorithm. the function api has a 2nd optional parameter that allows you to 'hook' into each step in the callstack as the algorithm is executing in 'realtime', this is great for writing visualisations or other apps. 
+
+a proper sudoku solver where the input has to be 9x9 and with a minimum of 17 clues, uses a brute force recursive backtracking algorithm. the function api has a 2nd optional parameter that allows you to 'hook' into each step in the callstack as the algorithm is executing in 'realtime', this is great for writing visualisations or other apps.
 
 <img alt="screenshot of solved sudoku puzzle input" src="./realtime-console-visualisation.gif" width="280px"/>
 
-
 # usage
+
 ## basic usage
-``` TypeScript
+
+```TypeScript
 // sudoku puzzle input as a 2d array (can also be a 1d array)
 const puzzleInput2dArr: number[][] = [
   [9, 1, 5, -1, -1, 3, 4, -1, 6],
@@ -22,7 +24,7 @@ const puzzleInput2dArr: number[][] = [
   [4, -1, 9, -1, -1, 1, 3, -1, 5],
 ];
 
-(async () => {  
+(async () => {
   // function api usage
   const solvedSudoku: number[][] = await solveProperSudokuAsync(puzzleInput2dArr);
 })();
@@ -30,7 +32,7 @@ const puzzleInput2dArr: number[][] = [
 
 ## example usage to write a visualisation (in the console) of a suduko puzzle being solved in realtime
 
-``` TypeScript
+```TypeScript
 // sudoku puzzle input as a 2d array (can also be as a 1d array)
 const puzzleInput2dArr: number[][] = [
   [9, 1, 5, -1, -1, 3, 4, -1, 6],
@@ -55,7 +57,7 @@ const puzzleInput2dArr: number[][] = [
   console.log(formattedPuzzleInputAsString);
 
   console.log("\n");
-  
+
   // function api usage
   const solvedSudoku = await solveProperSudokuAsync(puzzleInput2dArr, {
     // 'hook' into each function call in the recursive call stack
@@ -73,7 +75,7 @@ const puzzleInput2dArr: number[][] = [
     },
 
     // update/draw 10 times per second (will wait 1/10 of a second until calling next function in recursive algorithm)
-    delayBetweenEachStepInCallStackInMillisecs: 1000 / 10, 
+    delayBetweenEachStepInCallStackInMillisecs: 1000 / 10,
   });
 
   // print result
@@ -85,7 +87,8 @@ const puzzleInput2dArr: number[][] = [
 })();
 ```
 
-# API Documentation 
+# API Documentation
+
 ## Function: solveProperSudokuAsync()
 
 > **solveProperSudokuAsync**(`puzzleInput`, `callStackStep`?): `Promise`\<`number`[][]\>
@@ -113,5 +116,7 @@ a 9x9 2d array of numbers where -1 represents an empty cell
 a 9x9 2d array of numbers representing the solved sudoku puzzle
 
 # projects that use this package
-If you end up writing any apps/visualisations that use this package, or find the package useful in any way would <3 to see or hear about it @ christopher.pkm@gmail.com Happy Coding :) 
+
 - [sudoku solver async realtime visualisation web app](https://sudokusolverasyncvisualisation.netlify.app/)
+
+If you end up writing any apps/visualisations that use this package, or find the package useful in any way would <3 to see or hear about it @ christopher.pkm@gmail.com and am happy to link it here. Happy Coding :)
