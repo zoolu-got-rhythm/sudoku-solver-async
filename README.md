@@ -93,8 +93,6 @@ const puzzleInput2dArr: number[][] = [
 
 > **solveProperSudokuAsync**(`puzzleInput`, `callStackStep`?): `Promise`\<`number`[][]\>
 
-Defined in: [sudokuSolver.ts:227](https://github.com/zoolu-got-rhythm/sudoku-solver-ts/blob/ab3a63f30406e385e3d868fb3c933a955c6268e8/src/sudokuSolver.ts#L227)
-
 Solves a proper sudoku puzzle (9x9 with a minimum of 17 clues) with a recursive backtracking algorithm
 
 ### Parameters
