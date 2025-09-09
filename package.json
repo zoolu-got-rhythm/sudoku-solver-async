@@ -17,12 +17,16 @@
     ],
     "devDependencies": {
         "@types/jest": "^29.5.14",
+        "eslint": "^9.35.0",
+        "globals": "^16.4.0",
         "jest": "^29.7.0",
+        "jiti": "^2.5.1",
+        "prettier": "^3.0.0",
         "ts-jest": "^29.2.5",
         "typedoc": "^0.27.6",
         "typedoc-plugin-markdown": "^4.4.1",
         "typescript": "^5.7.3",
-        "prettier": "^3.0.0"
+        "typescript-eslint": "^8.43.0"
     },
     "repository": {
         "type": "git",
@@ -37,7 +41,7 @@
         "start": "npm run build && node dist/index.js",
         "test": "jest",
         "format": "prettier --write \"src/**/*.ts\"",
-        "lint": "eslint . --ext .ts",
+        "lint": "eslint",
         "prepare": "npm run build",
         "postversion": "git push && git push --tags"
     },
